@@ -6,14 +6,14 @@ void main() {
   print("Write second number");
   String? b = stdin.readLineSync();
   if (a != null && b != null) {
-    print("Your NOD is:" + _gcd(int.parse(a), int.parse(b)).toString());
+    print("Your NOD is:" + gcd(int.parse(a), int.parse(b)).toString());
   }
   if (a != null && b != null) {
-    print("Your NOK is:" + _lcm(int.parse(a), int.parse(b)).toString());
+    print("Your NOK is:" + lcm(int.parse(a), int.parse(b)).toString());
   }
 }
 
-int _gcd(int a, int b) {
+int gcd(int a, int b) {
   int nod;
   if (a < b) {
     int c = a;
@@ -31,8 +31,8 @@ int _gcd(int a, int b) {
   return nod;
 }
 
-int _lcm(int a, int b) {
+int lcm(int a, int b) {
   double nok;
-  nok = a / _gcd(a, b) * b;
+  nok = a / gcd(a, b) * b;
   return nok ~/ 1;
 }
