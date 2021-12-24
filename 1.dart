@@ -49,7 +49,7 @@ bool _is_prime(int x) {
 }
 
 List<int> find_dividers(int x) {
-  List<int> dividers = [0];
+  List<int> dividers = [];
 
   for (int i = 1; i <= sqrt(x); i++) {
     if (x % i == 0) {
@@ -65,12 +65,12 @@ List<int> find_dividers(int x) {
       }
     }
   }
-  dividers.removeAt(0);
+  //dividers.removeAt(0);
   return dividers;
 }
 
 List<int> factorize(int x) {
-  List<int> factors = [0];
+  List<int> factors = [];
 
   for (int i = 2; i <= sqrt(x); i++) {
     while (x % i == 0) {
@@ -82,6 +82,6 @@ List<int> factorize(int x) {
   if (x != 1) {
     factors.add(x);
   }
-  factors.removeAt(0);
+  //factors.removeAt(0);
   return factors;
 }
