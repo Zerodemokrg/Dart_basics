@@ -1,6 +1,9 @@
 import 'dart:io';
 import 'dart:math';
 
+//задача Реализуйте методы вычисления НОД и НОК целых чисел.
+//Реализуйте метод, который разбивает число на простые множители
+//и возвращает их.
 void main() {
   print("Write first number");
   String? a = stdin.readLineSync();
