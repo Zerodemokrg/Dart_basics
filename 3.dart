@@ -6,7 +6,7 @@ void main() {
   if (a == null) {
     throw ("Number is null!");
   }
-  searchNumbers(a);
+  print("Your result: " + searchNumbers(a).toString());
 }
 
 List<int> searchNumbers(String s) {
@@ -17,7 +17,7 @@ List<int> searchNumbers(String s) {
       result.add(int.parse(wordList[i].trim()));
     }
   }
-  print(result);
+
   return result;
 }
 
@@ -25,8 +25,6 @@ bool _checkStringForNumber(String s) {
   for (int i = 0; i < s.length; i++) {
     if (s.codeUnitAt(i) < 48 || s.codeUnitAt(i) > 57) {
       return false;
-    } else {
-      print((s[i]));
     }
   }
   return true;
