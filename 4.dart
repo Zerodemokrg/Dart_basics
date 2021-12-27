@@ -6,7 +6,7 @@ void main() {
   if (s == null) {
     throw ("your collection is null");
   }
-  print("Your map is: " + wordCounter(stringToWords(s)).toString());
+  print("Your map is: " + wordCounter(_stringToWords(s)).toString());
 }
 
 Map<String, int> wordCounter(List<String> wordList) {
@@ -23,7 +23,7 @@ Map<String, int> wordCounter(List<String> wordList) {
   return result;
 }
 
-List<String> stringToWords(String s) {
+List<String> _stringToWords(String s) {
   List<String> wordList = s.split(' ');
   return wordList;
 }
