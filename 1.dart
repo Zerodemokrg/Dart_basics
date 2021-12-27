@@ -2,8 +2,7 @@ import 'dart:io';
 import 'dart:math';
 
 //задача Реализуйте методы вычисления НОД и НОК целых чисел.
-//Реализуйте метод, который разбивает число на простые множители
-//и возвращает их.
+//Реализуйте метод, который разбивает число на простые множители и возвращает их.
 void main() {
   print("Write first number");
   String? a = stdin.readLineSync();
@@ -51,7 +50,7 @@ bool _is_prime(int x) {
   return true;
 }
 
-List<int> find_dividers(int x) {
+List<int> findDividers(int x) {
   List<int> dividers = [];
 
   for (int i = 1; i <= sqrt(x); i++) {
@@ -59,7 +58,6 @@ List<int> find_dividers(int x) {
       if (_is_prime(i) == true) {
         dividers.add(i);
       }
-
       //для корня из x не существует парного делителя
       if (i * i != x) {
         if (_is_prime(x ~/ i) == true) {
@@ -68,23 +66,20 @@ List<int> find_dividers(int x) {
       }
     }
   }
-  //dividers.removeAt(0);
+
   return dividers;
 }
 
 List<int> factorize(int x) {
   List<int> factors = [];
-
   for (int i = 2; i <= sqrt(x); i++) {
     while (x % i == 0) {
       factors.add(i);
       x ~/= i;
     }
   }
-
   if (x != 1) {
     factors.add(x);
   }
-  //factors.removeAt(0);
   return factors;
 }
