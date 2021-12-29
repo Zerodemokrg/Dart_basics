@@ -25,5 +25,11 @@ Map<String, int> wordCounter(List<String> wordList) {
 
 List<String> _stringToWords(String s) {
   List<String> wordList = s.split(' ');
-  return wordList;
+  List<String> result = [];
+  for (int i = 0; i < wordList.length; i++) {
+    if (wordList[i] != '') {
+      result.add(wordList[i]);
+    }
+  }
+  return result;
 }
