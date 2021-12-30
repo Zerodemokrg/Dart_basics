@@ -16,6 +16,11 @@ void main() {
 }
 
 int binaryToDec(int n) {
+  bool negative = false;
+  if (n < 0) {
+    negative = true;
+    n = -n;
+  }
   String s = n.toString();
   int k = 1;
   int result = 0;
@@ -23,12 +28,21 @@ int binaryToDec(int n) {
     result += ((s.codeUnitAt(i) - 48) * k);
     k = k * 2;
   }
+  if (negative == true) {
+    result = -result;
+  }
   print("Your result in dec: " + result.toString());
   return result;
 }
 
 int decToBinary(int n) {
   int k;
+  bool negative = false;
+  if (n < 0) {
+    negative = true;
+    n = -n;
+  }
+
   String result = "";
   for (n; n != 1;) {
     k = n % 2;
@@ -37,6 +51,9 @@ int decToBinary(int n) {
     if (n == 1) {
       result = n.toString() + result;
     }
+  }
+  if (negative == true) {
+    result = "-" + result;
   }
   print("Your result in binary: " + result);
   return int.parse(result);
