@@ -12,7 +12,7 @@ void main() {
     throw ("Number is null!");
   }
   binaryToDec(int.parse(a));
-  decToBinary(int.parse(b));
+  print(decToBinary(int.parse(b)));
 }
 
 int binaryToDec(int n) {
@@ -36,6 +36,9 @@ int binaryToDec(int n) {
 }
 
 int decToBinary(int n) {
+  if (n == 1) return 1;
+  if (n == -1) return -1;
+  ;
   int k;
   bool negative = false;
   if (n < 0) {
